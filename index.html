@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Worker Thread</title>
+  </head>
+  <body>
+    <h1>Worker Thread Example</h1>
+    <main>
+      <p>
+        As we know JavaScript is a single threaded application, most of the io
+        intensive async tasks are delegated via event loop, but if there are any
+        cpu intensive tasks that needs to be run on the main thread javascript
+        will show blocking behavior. To make this non blocking we can utilize
+        worker threads.
+      </p>
+      <p>
+        This example shows how we can utilize worker threads to handle cpu heavy
+        calculations. If you click the main thread button, it will count till
+        ten billion and you can not change the background color (blocking
+        behavior). But if you click on the worker thread button, it will run the
+        same tasks on the worker thread but you can change the background color
+        (non-blocking behavior).
+      </p>
+
+      <div class="button-group">
+        <button id="changeBackground">Change Background</button>
+        <button id="doCPUIntensiveWork">Main Thread</button>
+        <button id="doCPUIntensiveWorkInWorker">Worker Thread</button>
+      </div>
+      <div id="result"></div>
+    </main>
+    <script src="src/index.js"></script>
+  </body>
+</html>
