@@ -1,4 +1,4 @@
-const worker = new Worker('worker.js');
+const worker = new Worker('../worker.js');
 
 const changeBackground = document.getElementById('changeBackground');
 const doCPUIntensiveWork = document.getElementById('doCPUIntensiveWork');
